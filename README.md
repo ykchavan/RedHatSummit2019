@@ -78,7 +78,10 @@ Here  GUID  is number provided you on 'Lab information' page
 # Lab 1.2 - Create a Blueprint
 
 * On the Image Builder tab, click on **Create Blueprint** button on the top right corner.
+* Give a name something like - summit2019
 <center><a href="ib1.png" target="_blank"><img src="ib1.png" alt="Create Blueprint"></a><br/>Click image to view at full size.</center>
+
+**Note:** Remembe the Blueprint name, you will need it in the later section of this lab.
 
 <a name="add"></a>
 # Lab 1.3 - Add packages to the Blueprint
@@ -87,6 +90,7 @@ Here  GUID  is number provided you on 'Lab information' page
 
 * Click on the "+" icon to add the packages
 * In this example we are adding *bison* package
+* Add more package as you like
 
 <br>
 <br>
@@ -135,11 +139,11 @@ On the terminal run:
 * Download a copy of the blueprint configuration file from Image Builder
 
 ~~~
-[root@bastion-GUID ~]# composer-cli blueprints save test-blueprint-1
+[root@bastion-GUID ~]# composer-cli blueprints save summit2019
 ~~~
-* You will get a file **test-blueprint-1.toml**
+* You will get a file **summit2019.toml**
 
-* Append the following lines to the test-blueprint-1.toml file
+* Append the following lines to the summit2019.toml file
 ~~~
 [[customizations.user]]
 name = "myuser"
@@ -149,12 +153,12 @@ groups = ["users", "wheel"]
 
 * Push the revised blueprint configuration file back to Image Builder
 ~~~
-[root@bastion-GUID ~]# composer-cli blueprints push test-blueprint-1.toml
+[root@bastion-GUID ~]# composer-cli blueprints push summit2019.toml
 ~~~
 
 * Verify that your changes appear in the configuration file
 ~~~
-[root@bastion-GUID ~]# composer-cli blueprints show test-blueprint-1
+[root@bastion-GUID ~]# composer-cli blueprints show summit2019
 ~~~
 
 
@@ -162,7 +166,7 @@ groups = ["users", "wheel"]
 
 # Lab 2.2 - Test the new image with virt-install
 
-* Get GUID of image
+* Get GUID of the image
 ~~~
 [root@bastion-GUID ~]# composer-cli compose list
 ~~~
@@ -177,7 +181,7 @@ groups = ["users", "wheel"]
 
   * Login as myuser and password as mypassword
   * Run **id** command to verify if myuser is a member of groups users and wheel by command
-  * Verify that the package added in the blueprint is installed
+  * Verify that the package you added in the blueprint earlier are installed in the VM
   ~~~
   [root@bastion-GUID ~]# rpm -qa | grep -i <package-name>
   ~~~
