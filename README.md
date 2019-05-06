@@ -135,7 +135,7 @@ Here  LAB-GUID  is the number provided to you on the 'Lab information' page
 
 * Test the image with virt-install. It will start virt-viewer where you can see your vm booting up
 ~~~
-[root@bastion-LAB-GUID ~]# virt-install --name RHEL8Lab2 --memory 2048 --vcpus 2 --os-variant rhel8.0 --import --disk /var/lib/lorax/composer/results/<GUID number for that image>/disk.qcow2
+[root@bastion-LAB-GUID ~]# virt-install --name RHEL8Lab1 --memory 2048 --vcpus 2 --os-variant rhel8.0 --import --disk /var/lib/lorax/composer/results/<GUID number for that image>/disk.qcow2
 ~~~
 
 <h3>Congratulations! You built your first image.</h3>
@@ -161,7 +161,7 @@ Try to log in as "myuser" with password "mypassword".
 ~~~
 [[customizations.user]]
 name = "myuser"
-password = “mypassword”
+password = "mypassword"
 groups = ["users", "wheel"]
 ~~~
 
@@ -175,7 +175,10 @@ groups = ["users", "wheel"]
 [root@bastion-LAB-GUID ~]# composer-cli blueprints show summit2019
 ~~~
 
-* Create a new image using Image builder on the Red Hat Web Console. Refer Lab 1.4
+* Like we did in Lab 1.4, we will create a new image:
+  * After adding the packages, click on you blueprint on the top left corner "summit2019"
+  * Next click on the **images** tab and click on **Create Image**
+  * Select the **Image Type** as **QEMU QCOW2 Image**(qcow2)
 
   <a name="testvirt"></a>
 
@@ -196,7 +199,7 @@ groups = ["users", "wheel"]
 
 * Test the new image with *virt-install*
 ~~~
-[root@bastion-LAB-GUID ~]# virt-install --name RHEL8Lab3 --memory 2048 --vcpus 2 --os-variant rhel8.0 --import --disk /var/lib/lorax/composer/results/<GUID number for that image>/disk.qcow2
+[root@bastion-LAB-GUID ~]# virt-install --name RHEL8Lab2 --memory 2048 --vcpus 2 --os-variant rhel8.0 --import --disk /var/lib/lorax/composer/results/<GUID number for that image>/disk.qcow2
 ~~~
 
 * Verify the VM
