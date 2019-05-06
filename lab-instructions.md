@@ -50,10 +50,9 @@ bastion-GUID.rhpds.opentlc.com
   or
   https://<server IP>:9090
   ~~~
-
+<br/>
 <br/>
 <center><h1>LAB 1 - Create a new RHEL image using Image Builder</h1></center>
-<br/>
 <br/>
 <hr/>
 # Lab 1.1 - Install Image Builder
