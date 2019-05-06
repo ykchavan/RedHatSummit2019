@@ -17,7 +17,7 @@ Table of Contents:
 6. [ Lab 1.5 - Test the new image ](#testimage)
 7. [ Lab 2.1 - Customize the blueprint configuration file ](#custom)
 8. [ Lab 2.2 - Test the new image with virt-install ](#testvirt)
-9. [ Resources ](#resources)
+9. [ Resources ](#resource)
 
 <a name="details"></a>
 # LAB Details
@@ -163,7 +163,9 @@ groups = ["users", "wheel"]
 [root@bastion-GUID ~]# composer-cli blueprints show test-blueprint-1
 ~~~
 
-<a name="testvirt"></a>
+
+  <a name="testvirt"></a>
+
 # Lab 2.2 - Test the new image with virt-install
 
 * Get GUID of image
@@ -186,7 +188,7 @@ groups = ["users", "wheel"]
   [root@bastion-GUID ~]# rpm -qa | grep -i <package-name>
   ~~~
 
-<a name="resources"></a>
+  <a name="resource"></a>
 # Resources
 
 [Building custom system images with composer)](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/chap-composer-x86)
