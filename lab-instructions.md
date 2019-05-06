@@ -46,15 +46,12 @@ Here  GUID  is number provided you on 'Lab information' page
   ~~~
   [root@bastion-GUID ~]# systemctl enable cockpit.socket
   ~~~
-<br></br>
 # To access the Web Console
-* Use hostname or IP with port 9090
+* Use hostname with port 9090
   * Sample
 
   ~~~
   https://bastion-GUID.rhpds.opentlc.com:9090
-  or
-  https://<server IP>:9090
   ~~~
 
   <a name="install"></a>
