@@ -6,11 +6,17 @@ Presenters:
 * Yogesh Chavan
 * Nenad Peric
 * Karan Rai
-# LAB Details
+
+Table of Contents:
 
 1. [ LAB Details ](#details)
+2. [Lab 1.5 - Test the new image](#test_image)
+
 
 <a name="details"></a>
+# LAB Details
+
+
 * You have a pre-installed Red Hat Enterprise Linux 8 system
 ~~~
 [lab-user@bastion-GUID ~]# hostname
@@ -106,6 +112,8 @@ bastion-GUID.rhpds.opentlc.com
 > #### Note::
 >
 > Creation of a new Image may take 5 to 10 minutes
+
+<a name="test_image"></a>
 # Lab 1.5 - Test the new image
 
 On the terminal run:
