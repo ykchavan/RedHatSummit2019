@@ -135,6 +135,7 @@ On the terminal run:
 <hr>
 <a name="custom"></a>
 <h1>LAB 2 - Customize the RHEL image using composer-cli</h1>
+
 # Lab 2.1 - Customize the blueprint configuration file
 
 * Download a copy of the blueprint configuration file from Image Builder
