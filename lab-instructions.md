@@ -88,7 +88,7 @@ bastion-GUID.rhpds.opentlc.com
 * On the Image Builder tab, click on **Create Blueprint** button on the top right corner.
 <center><a href="files/images/ib1.png" target="_blank"><img src="files/images/ib1.png" alt="Create Blueprint"></a><br/>Click image to view at full size.</center>
 
-<a name="#add"></a>
+<a name="add"></a>
 # Lab 1.3 - Add packages to the Blueprint
 
 * On the *Edit Blueprint* page search for the available packages in *Available Packages* search box
@@ -187,7 +187,7 @@ groups = ["users", "wheel"]
   ~~~
 
 <a name="resources"></a>
-### Resources
+# Resources
 
 [Building custom system images with composer)](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/chap-composer-x86)
 
