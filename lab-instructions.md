@@ -10,14 +10,14 @@ Presenters:
 Table of Contents:
 
 1. [ LAB Details ](#details)
-2. [Lab 1.1 - Install Image Builder](#001)
-3. [Lab 1.2 - Create a Blueprint](#002)
-4. [Lab 1.3 - Add packages to the Blueprint](#003)
-5. [Lab 1.4 - Create Image](#004)
-6. [Lab 1.5 - Test the new image](#005)
-7. [Lab 2.1 - Customize the blueprint configuration file](#006)
-8. [Lab 2.2 - Test the new image with virt-install](#007)
-9. [Resources](#008)
+2. [Lab 1.1 - Install Image Builder](#install)
+3. [Lab 1.2 - Create a Blueprint](#create)
+4. [Lab 1.3 - Add packages to the Blueprint](#add)
+5. [Lab 1.4 - Create Image](#createimage)
+6. [Lab 1.5 - Test the new image](#testimage)
+7. [Lab 2.1 - Customize the blueprint configuration file](#custom)
+8. [Lab 2.2 - Test the new image with virt-install](#testvirt)
+9. [Resources](#resources)
 
 <a name="details"></a>
 # LAB Details
@@ -57,7 +57,7 @@ bastion-GUID.rhpds.opentlc.com
   https://<server IP>:9090
   ~~~
 
-<a name="#001"></a>
+<a name="#install"></a>
 # Lab 1.1 - Install Image Builder
 
 * Install Image Builder with the CLI and the web console plugin:
@@ -82,13 +82,13 @@ bastion-GUID.rhpds.opentlc.com
 * Now you should be able to see the "Image Builder" tab on left hand side of the Web Console.
 <center><a href="files/images/ib1.png" target="_blank"><img src="files/images/ib1.png" alt="Image Builder"></a><br/>Click image to view at full size.</center>
 
-<a name="#002"></a>
+<a name="#create"></a>
 # Lab 1.2 - Create a Blueprint
 
 * On the Image Builder tab, click on **Create Blueprint** button on the top right corner.
 <center><a href="files/images/ib1.png" target="_blank"><img src="files/images/ib1.png" alt="Create Blueprint"></a><br/>Click image to view at full size.</center>
 
-<a name="#003"></a>
+<a name="#add"></a>
 # Lab 1.3 - Add packages to the Blueprint
 
 * On the *Edit Blueprint* page search for the available packages in *Available Packages* search box
@@ -100,7 +100,7 @@ bastion-GUID.rhpds.opentlc.com
 <br>
 <center><a href="files/images/ib2.png" target="_blank"><img src="files/images/ib2.png" alt="Add packages"></a><br/>Click image to view at full size.</center>
 
-<a name="#004"></a>
+<a name="#createimage"></a>
 # Lab 1.4 - Create Image
 
 
@@ -117,7 +117,7 @@ bastion-GUID.rhpds.opentlc.com
 >
 > Creation of a new Image may take 5 to 10 minutes
 
-<a name="#005"></a>
+<a name="#testimage"></a>
 
 # Lab 1.5 - Test the new image
 
@@ -135,7 +135,7 @@ On the terminal run:
 [root@bastion-GUID ~]# virt-install --name RHEL8Lab2 --memory 2048 --vcpus 2 --os-variant rhel8.0 --import --disk /var/lib/lorax/composer/results/<GUID number for that image>/disk.qcow2
 ~~~
 
-<a name="#006"></a>
+<a name="#custom"></a>
 # Lab 2.1 - Customize the blueprint configuration file
 
 * Download a copy of the blueprint configuration file from Image Builder
@@ -163,7 +163,7 @@ groups = ["users", "wheel"]
 [root@bastion-GUID ~]# composer-cli blueprints show test-blueprint-1
 ~~~
 
-<a name="#007"></a>
+<a name="#testvirt"></a>
 # Lab 2.2 - Test the new image with virt-install
 
 * Get GUID of image
@@ -186,7 +186,7 @@ groups = ["users", "wheel"]
   [root@bastion-GUID ~]# rpm -qa | grep -i <package-name>
   ~~~
 
-<a name="#008"></a>
+<a name="#resources"></a>
 ### Resources
 
 [Building custom system images with composer)](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/chap-composer-x86)
