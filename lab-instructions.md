@@ -8,6 +8,9 @@ Presenters:
 * Karan Rai
 # LAB Details
 
+1. [ LAB Details ](#details)
+
+<a name="details"></a>
 * You have a pre-installed Red Hat Enterprise Linux 8 system
 ~~~
 [lab-user@bastion-GUID ~]# hostname
