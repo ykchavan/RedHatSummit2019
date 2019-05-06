@@ -24,10 +24,10 @@ Table of Contents:
 
 * You have a pre-installed Red Hat Enterprise Linux 8 system
 ~~~
-[lab-user@bastion-LAB-GUID ~]# hostname
-bastion-GUID.rhpds.opentlc.com
+[lab-user@bastion-LAB-GUID ~]$ hostname
+bastion-LAB-GUID.rhpds.opentlc.com
 ~~~
-Here  GUID  is the number provided to you on the 'Lab information' page
+Here  LAB-GUID  is the number provided to you on the 'Lab information' page
 
 * Following packages are already installed:
   * Web Console (cockpit)
@@ -40,11 +40,13 @@ Here  GUID  is the number provided to you on the 'Lab information' page
   [root@bastion-LAB-GUID ~]# systemctl is-enabled cockpit.socket
   enabled
   ~~~
-# To access the Web Console
+# To access the Red Hat Web Console
 * Use hostname with port 9090
   ~~~
   https://bastion-LAB-GUID.rhpds.opentlc.com:9090
   ~~~
+* Login as lab-user and password to-be-provided
+* Check - "Reuse my password for privileged tasks"
 
   <a name="install"></a>
 # Lab 1.1 - Install Image Builder
@@ -83,15 +85,14 @@ Here  GUID  is the number provided to you on the 'Lab information' page
 * Give a name something like - summit2019
 <center><a href="ib1.png" target="_blank"><img src="ib1.png" alt="Create Blueprint"></a><br/>Click image to view at full size.</center>
 
-**Note:** Remembe the Blueprint name, you will need it in the later section of this lab.
+**Note:** Remember the Blueprint name, you will need it in the later section of this lab.
 
 <a name="add"></a>
 # Lab 1.3 - Add packages to the Blueprint
 
-* On the *Edit Blueprint* page search for the available packages in *Available Packages* search box
+* On the *Edit Blueprint* page search the available packages in *Available Components* search box for "bison" package
 
 * Click on the "+" icon to add the packages
-* In this example we are adding *bison* package
 * Add more package as you like
 
 <br>
