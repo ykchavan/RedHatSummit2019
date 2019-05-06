@@ -45,13 +45,15 @@ Here  LAB-GUID  is the number provided to you on the 'Lab information' page
   ~~~
   https://bastion-LAB-GUID.rhpds.opentlc.com:9090
   ~~~
+* You will get a warning that the "connection is not secure". You can accept the self-signed certificate and add an exception.
 * Login as lab-user and password to-be-provided
 * Check - "Reuse my password for privileged tasks"
 
   <a name="install"></a>
 # Lab 1.1 - Install Image Builder
 
-* On the web console go to the **terminal** tab
+* Open a SSH session to your RHEL 8 server and run the following commands.
+  * You can also use the **terminal** tab on Red Hat web console.
 * Use sudo to become root
 ~~~
 [lab-user@bastion-LAB-GUID ~]$ sudo -i
@@ -91,9 +93,9 @@ Here  LAB-GUID  is the number provided to you on the 'Lab information' page
 # Lab 1.3 - Add packages to the Blueprint
 
 * On the *Edit Blueprint* page search the available packages in *Available Components* search box for "bison" package
-
 * Click on the "+" icon to add the packages
 * Add more packages if you like
+* After adding packages click on **Commit** on the top right corner.
 
 <br>
 <br>
@@ -114,6 +116,8 @@ Here  LAB-GUID  is the number provided to you on the 'Lab information' page
 
 
 **Note** Creation of a new Image may take 5 to 10 minutes
+
+* Meanwhile you can monitor logs at /var/log/lorex-composer
 
 <a name="testimage"></a>
 
@@ -141,7 +145,8 @@ Here  LAB-GUID  is the number provided to you on the 'Lab information' page
 <h3>Congratulations! You built your first image.</h3>
 
 Try to log in as "myuser" with password "mypassword".
-
+Sadly in a freshly built image this will not work. For security reasons root account is disabled and we have no other account we can use.
+So let us go ahead and fix that!
 
 <br>
 <hr>
@@ -184,13 +189,7 @@ groups = ["users", "wheel"]
 
 # Lab 2.2 - Test the new image
 
-* On the Lab GUID Assignment tab in your browser, at the bottom of the page there is a link to the console of your RHEL 8 server. When you click on that link, you will be presented with a SUMMIT-LAB control page. On it under "0bastion" click "CONSOLE". This will open a graphical console of your RHEL 8 server
-
-* Log in as lab-user and the provided password.
-
-* Click on Activities and choose terminal
-
-* Use "sudo -i" to become root.
+* Go back to your graphical console of your RHEL 8 server
 
 * Get GUID of the image
 ~~~
@@ -204,20 +203,21 @@ groups = ["users", "wheel"]
 
 * Verify the VM
 
-  * Login as myuser and password as mypassword
+  * Login as myuser and password as mypassword (This should work now)
   * Run **id** command to verify if myuser is a member of *users* and *wheel* group
-  * Verify that the package you added in the blueprint earlier are installed in the VM
+  * Verify that the package(s) you added in the blueprint earlier are installed in the VM
   ~~~
   [myuser@localhost ~]$ rpm -qa | grep -i <package-name>
   ~~~
 
-<h3>Congratulations! You have customized the image.</h3>
+<h3>Congratulations! you have fixed the problems by customizing the image</h3>
+*
 
 <a name="resource"></a>
 # Resources
 
-[Building custom system images with composer)](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/chap-composer-x86)
+[Building custom system images with composer - RHEL 7](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/chap-composer-x86)
 
-[Building custom system images with Composer](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8-beta/html/installing_and_deploying_rhel/building-custom-system-images-with-composer_graphical-installation)
+[Building custom system images with Composer - RHEL 8 Beta](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8-beta/html/installing_and_deploying_rhel/building-custom-system-images-with-composer_graphical-installation)
 
 [Download the Presentation](ImageBuilder-Summit.pdf)
