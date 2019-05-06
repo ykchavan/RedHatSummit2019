@@ -29,12 +29,6 @@ bastion-GUID.rhpds.opentlc.com
 ~~~
 Here  GUID  is number provided you on 'Lab information' page
 
-* You can use sudo to become root
-~~~
-[lab-user@bastion-GUID ~]$ sudo -i
-[root@bastion-GUID ~]#
-~~~
-
 * Following packages are already installed:
   * Web Console (cockpit)
   * virt-viewer
@@ -53,6 +47,13 @@ Here  GUID  is number provided you on 'Lab information' page
 
   <a name="install"></a>
 # Lab 1.1 - Install Image Builder
+
+* On the web console go to the **terminal** tab
+* Use sudo to become root
+~~~
+[lab-user@bastion-GUID ~]$ sudo -i
+[root@bastion-GUID ~]#
+~~~
 
 * Install Image Builder with the CLI and the web console plugin:
 ~~~
@@ -183,7 +184,7 @@ groups = ["users", "wheel"]
   * Run **id** command to verify if myuser is a member of groups users and wheel by command
   * Verify that the package you added in the blueprint earlier are installed in the VM
   ~~~
-  [root@bastion-GUID ~]# rpm -qa | grep -i <package-name>
+  [root@vm ~]# rpm -qa | grep -i <package-name>
   ~~~
 
 <a name="resource"></a>
