@@ -133,10 +133,15 @@ Here  LAB-GUID  is the number provided to you on the 'Lab information' page
 99ed96cd-b783-4cad-838f-c8173e038431 FINISHED summit2019 0.0.2 qcow2                                                                                                                                 
 ~~~
 
-* Test the image with virt-install. It will start virt-viewer where you can see your vm bootin up
+* Test the image with virt-install. It will start virt-viewer where you can see your vm booting up
 ~~~
 [root@bastion-LAB-GUID ~]# virt-install --name RHEL8Lab2 --memory 2048 --vcpus 2 --os-variant rhel8.0 --import --disk /var/lib/lorax/composer/results/<GUID number for that image>/disk.qcow2
 ~~~
+
+<h3>Congratulations! You built your first image.</h3>
+
+Try to log in as "myuser" with password "mypassword".
+
 
 <br>
 <hr>
@@ -170,20 +175,28 @@ groups = ["users", "wheel"]
 [root@bastion-LAB-GUID ~]# composer-cli blueprints show summit2019
 ~~~
 
+* Create a new image using Image builder on the Red Hat Web Console. Refer Lab 1.4
 
   <a name="testvirt"></a>
 
-# Lab 2.2 - Test the new image with virt-install
+# Lab 2.2 - Test the new image
+
+* On the Lab GUID Assignment tab in your browser, at the bottom of the page there is a link to the console of your RHEL 8 server. When you click on that link, you will be presented with a SUMMIT-LAB control page. On it under "0bastion" click "CONSOLE". This will open a graphical console of your RHEL 8 server
+
+* Log in as lab-user and the provided password.
+
+* Click on Activities and choose terminal
+
+* Use "sudo -i" to become root.
 
 * Get GUID of the image
 ~~~
 [root@bastion-LAB-GUID ~]# composer-cli compose list
 ~~~
 
-* Run this command to test the image with *virt-viewer*
-
+* Test the new image with *virt-install*
 ~~~
-[root@bastion-LAB-GUID ~]# virt-install --name RHEL8Lab2 --memory 2048 --vcpus 2 --os-variant rhel8.0 --import --disk /var/lib/lorax/composer/results/<GUID number for that image>/disk.qcow2
+[root@bastion-LAB-GUID ~]# virt-install --name RHEL8Lab3 --memory 2048 --vcpus 2 --os-variant rhel8.0 --import --disk /var/lib/lorax/composer/results/<GUID number for that image>/disk.qcow2
 ~~~
 
 * Verify the VM
@@ -192,8 +205,10 @@ groups = ["users", "wheel"]
   * Run **id** command to verify if myuser is a member of *users* and *wheel* group
   * Verify that the package you added in the blueprint earlier are installed in the VM
   ~~~
-  [root@vm ~]# rpm -qa | grep -i <package-name>
+  [myuser@localhost ~]$ rpm -qa | grep -i <package-name>
   ~~~
+
+<h3>Congratulations! You have customized the image.</h3>
 
 <a name="resource"></a>
 # Resources
