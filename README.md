@@ -119,7 +119,13 @@ Here  LAB-GUID  is the number provided to you on the 'Lab information' page
 
 # Lab 1.5 - Test the new image
 
-On the terminal run:
+* On the Lab GUID Assignment tab in your browser, at the bottom of the page there is a link to the console of your RHEL 8 server. When you click on that link, you will be presented with a SUMMIT-LAB control page. On it under "0bastion" click "CONSOLE". This will open a graphical console of your RHEL 8 server
+
+* Log in as lab-user and the provided password.
+
+* Click on Activities and choose terminal
+
+* Use "sudo -i" to become root.
 
 * Get the GUID of the image
 ~~~
@@ -127,9 +133,7 @@ On the terminal run:
 99ed96cd-b783-4cad-838f-c8173e038431 FINISHED summit2019 0.0.2 qcow2                                                                                                                                 
 ~~~
 
-* Login to the GUI of the server
-
-* Test the image with virt-viewer
+* Test the image with virt-install. It will start virt-viewer where you can see your vm bootin up
 ~~~
 [root@bastion-LAB-GUID ~]# virt-install --name RHEL8Lab2 --memory 2048 --vcpus 2 --os-variant rhel8.0 --import --disk /var/lib/lorax/composer/results/<GUID number for that image>/disk.qcow2
 ~~~
