@@ -75,12 +75,10 @@ bastion-GUID.rhpds.opentlc.com
 [root@bastion-GUID ~]# systemctl restart cockpit.service
 ~~~
 
-  > #### Note::
->
-> Restarting the web console will log you out, you need to relogin
+**Note**: Restarting the web console will log you out, you need to relogin
 
 * Now you should be able to see the "Image Builder" tab on left hand side of the Web Console.
-<center><a href="files/images/ib1.png" target="_blank"><img src="files/images/ib1.png" alt="Image Builder"></a><br/>Click image to view at full size.</center>
+<center><a href="ib1.png" target="_blank"><img src="ib1.png" alt="Image Builder"></a><br/>Click image to view at full size.</center>
 
 <a name="create"></a>
 # Lab 1.2 - Create a Blueprint
@@ -188,7 +186,7 @@ groups = ["users", "wheel"]
   [root@bastion-GUID ~]# rpm -qa | grep -i <package-name>
   ~~~
 
-  <a name="resource"></a>
+<a name="resource"></a>
 # Resources
 
 [Building custom system images with composer)](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/chap-composer-x86)
