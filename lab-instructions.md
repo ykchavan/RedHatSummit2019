@@ -28,11 +28,11 @@ Table of Contents:
 [lab-user@bastion-GUID ~]# hostname
 bastion-GUID.rhpds.opentlc.com
 ~~~
-
+Here  GUID  is number provided you on 'Lab information' page
 
 * You can use sudo to become root
 ~~~
-[lab-user@bastion-GUID ~]# sudo -i
+[lab-user@bastion-GUID ~]$ sudo -i
 [root@bastion-GUID ~]#
 ~~~
 
@@ -42,11 +42,11 @@ bastion-GUID.rhpds.opentlc.com
   * virt-install
 
 
-* Web console is enabled
+* Web console is enabled already using command
   ~~~
   [root@bastion-GUID ~]# systemctl enable cockpit.socket
   ~~~
-
+<br></br>
 # To access the Web Console
 * Use hostname or IP with port 9090
   * Sample
