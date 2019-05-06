@@ -93,7 +93,7 @@ Here  LAB-GUID  is the number provided to you on the 'Lab information' page
 * On the *Edit Blueprint* page search the available packages in *Available Components* search box for "bison" package
 
 * Click on the "+" icon to add the packages
-* Add more package as you like
+* Add more packages if you like
 
 <br>
 <br>
@@ -102,8 +102,9 @@ Here  LAB-GUID  is the number provided to you on the 'Lab information' page
 <a name="createimage"></a>
 # Lab 1.4 - Create Image
 
-
-* Go to the **images** tab and click on **Create Image**
+* After adding the packages, click on you blueprint on the top left corner "summit2019"
+* Verify the packages that you have added in the "Selected Components" table
+* Next click on the **images** tab and click on **Create Image**
 * Select the **Image Type** as **QEMU QCOW2 Image**(qcow2)
 
 
@@ -123,6 +124,7 @@ On the terminal run:
 * Get the GUID of the image
 ~~~
 [root@bastion-LAB-GUID ~]# composer-cli compose list
+99ed96cd-b783-4cad-838f-c8173e038431 FINISHED summit2019 0.0.2 qcow2                                                                                                                                 
 ~~~
 
 * Login to the GUI of the server
