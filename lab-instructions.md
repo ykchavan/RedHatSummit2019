@@ -10,14 +10,14 @@ Presenters:
 Table of Contents:
 
 1. [ LAB Details ](#details)
-2. [Lab 1.1 - Install Image Builder](#install)
-3. [Lab 1.2 - Create a Blueprint](#create)
-4. [Lab 1.3 - Add packages to the Blueprint](#add)
-5. [Lab 1.4 - Create Image](#createimage)
-6. [Lab 1.5 - Test the new image](#testimage)
-7. [Lab 2.1 - Customize the blueprint configuration file](#custom)
-8. [Lab 2.2 - Test the new image with virt-install](#testvirt)
-9. [Resources](#resources)
+2. [ Lab 1.1 - Install Image Builder ](#install)
+3. [ Lab 1.2 - Create a Blueprint ](#create)
+4. [ Lab 1.3 - Add packages to the Blueprint ](#add)
+5. [ Lab 1.4 - Create Image ](#createimage)
+6. [ Lab 1.5 - Test the new image ](#testimage)
+7. [ Lab 2.1 - Customize the blueprint configuration file ](#custom)
+8. [ Lab 2.2 - Test the new image with virt-install ](#testvirt)
+9. [ Resources ](#resources)
 
 <a name="details"></a>
 # LAB Details
