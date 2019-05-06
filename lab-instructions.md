@@ -57,7 +57,7 @@ bastion-GUID.rhpds.opentlc.com
   https://<server IP>:9090
   ~~~
 
-<a name="#install"></a>
+  <a name="install"></a>
 # Lab 1.1 - Install Image Builder
 
 * Install Image Builder with the CLI and the web console plugin:
@@ -82,7 +82,7 @@ bastion-GUID.rhpds.opentlc.com
 * Now you should be able to see the "Image Builder" tab on left hand side of the Web Console.
 <center><a href="files/images/ib1.png" target="_blank"><img src="files/images/ib1.png" alt="Image Builder"></a><br/>Click image to view at full size.</center>
 
-<a name="#create"></a>
+<a name="create"></a>
 # Lab 1.2 - Create a Blueprint
 
 * On the Image Builder tab, click on **Create Blueprint** button on the top right corner.
@@ -100,7 +100,7 @@ bastion-GUID.rhpds.opentlc.com
 <br>
 <center><a href="files/images/ib2.png" target="_blank"><img src="files/images/ib2.png" alt="Add packages"></a><br/>Click image to view at full size.</center>
 
-<a name="#createimage"></a>
+<a name="createimage"></a>
 # Lab 1.4 - Create Image
 
 
@@ -117,7 +117,7 @@ bastion-GUID.rhpds.opentlc.com
 >
 > Creation of a new Image may take 5 to 10 minutes
 
-<a name="#testimage"></a>
+<a name="testimage"></a>
 
 # Lab 1.5 - Test the new image
 
@@ -135,7 +135,7 @@ On the terminal run:
 [root@bastion-GUID ~]# virt-install --name RHEL8Lab2 --memory 2048 --vcpus 2 --os-variant rhel8.0 --import --disk /var/lib/lorax/composer/results/<GUID number for that image>/disk.qcow2
 ~~~
 
-<a name="#custom"></a>
+<a name="custom"></a>
 # Lab 2.1 - Customize the blueprint configuration file
 
 * Download a copy of the blueprint configuration file from Image Builder
@@ -163,7 +163,7 @@ groups = ["users", "wheel"]
 [root@bastion-GUID ~]# composer-cli blueprints show test-blueprint-1
 ~~~
 
-<a name="#testvirt"></a>
+<a name="testvirt"></a>
 # Lab 2.2 - Test the new image with virt-install
 
 * Get GUID of image
@@ -186,7 +186,7 @@ groups = ["users", "wheel"]
   [root@bastion-GUID ~]# rpm -qa | grep -i <package-name>
   ~~~
 
-<a name="#resources"></a>
+<a name="resources"></a>
 ### Resources
 
 [Building custom system images with composer)](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/chap-composer-x86)
