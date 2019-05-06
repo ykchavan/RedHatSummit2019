@@ -48,8 +48,6 @@ Here  GUID  is number provided you on 'Lab information' page
   ~~~
 # To access the Web Console
 * Use hostname with port 9090
-  * Sample
-
   ~~~
   https://bastion-GUID.rhpds.opentlc.com:9090
   ~~~
