@@ -111,9 +111,7 @@ bastion-GUID.rhpds.opentlc.com
 <center><a href="ib3.png" target="_blank"><img src="ib3.png" alt="Create Blueprint"></a><br/>Click image to view at full size.</center>
 
 
-> #### Note::
->
-> Creation of a new Image may take 5 to 10 minutes
+**Note** Creation of a new Image may take 5 to 10 minutes
 
 <a name="testimage"></a>
 
@@ -133,12 +131,15 @@ On the terminal run:
 [root@bastion-GUID ~]# virt-install --name RHEL8Lab2 --memory 2048 --vcpus 2 --os-variant rhel8.0 --import --disk /var/lib/lorax/composer/results/<GUID number for that image>/disk.qcow2
 ~~~
 
+<br>
+<hr>
 <a name="custom"></a>
+<h1>LAB 2 - Customize the RHEL image using composer-cli</h1>
 # Lab 2.1 - Customize the blueprint configuration file
 
 * Download a copy of the blueprint configuration file from Image Builder
 
-  ~~~
+~~~
 [root@bastion-GUID ~]# composer-cli blueprints save test-blueprint-1
 ~~~
 * You will get a file **test-blueprint-1.toml**
@@ -173,7 +174,7 @@ groups = ["users", "wheel"]
 
 * Run this command to test the image with *virt-viewer*
 
-  ~~~
+~~~
 [root@bastion-GUID ~]# virt-install --name RHEL8Lab2 --memory 2048 --vcpus 2 --os-variant rhel8.0 --import --disk /var/lib/lorax/composer/results/<GUID number for that image>/disk.qcow2
 ~~~
 
