@@ -24,10 +24,10 @@ Table of Contents:
 
 * You have a pre-installed Red Hat Enterprise Linux 8 system
 ~~~
-[lab-user@bastion-GUID ~]# hostname
+[lab-user@bastion-LAB-GUID ~]# hostname
 bastion-GUID.rhpds.opentlc.com
 ~~~
-Here  GUID  is number provided you on 'Lab information' page
+Here  GUID  is the number provided to you on the 'Lab information' page
 
 * Following packages are already installed:
   * Web Console (cockpit)
@@ -35,14 +35,15 @@ Here  GUID  is number provided you on 'Lab information' page
   * virt-install
 
 
-* Web console is enabled already using command
+* Web console is enabled
   ~~~
-  [root@bastion-GUID ~]# systemctl enable cockpit.socket
+  [root@bastion-LAB-GUID ~]# systemctl is-enabled cockpit.socket
+  enabled
   ~~~
 # To access the Web Console
 * Use hostname with port 9090
   ~~~
-  https://bastion-GUID.rhpds.opentlc.com:9090
+  https://bastion-LAB-GUID.rhpds.opentlc.com:9090
   ~~~
 
   <a name="install"></a>
@@ -51,23 +52,23 @@ Here  GUID  is number provided you on 'Lab information' page
 * On the web console go to the **terminal** tab
 * Use sudo to become root
 ~~~
-[lab-user@bastion-GUID ~]$ sudo -i
-[root@bastion-GUID ~]#
+[lab-user@bastion-LAB-GUID ~]$ sudo -i
+[root@bastion-LAB-GUID ~]#
 ~~~
 
-* Install Image Builder with the CLI and the web console plugin:
+* Install *Image Builder* with the CLI and the web console plugin:
 ~~~
-[root@bastion-GUID ~]# yum install lorax lorax-composer composer-cli cockpit-composer
+[root@bastion-LAB-GUID ~]# yum install lorax lorax-composer composer-cli cockpit-composer
 ~~~
 
 * Enable and start composer service
 ~~~
-[root@bastion-GUID ~]# systemctl enable --now lorax-composer.socket
+[root@bastion-LAB-GUID ~]# systemctl enable --now lorax-composer.socket
 ~~~
 
 * Restart cockpit service to load newly installed plugin
 ~~~
-[root@bastion-GUID ~]# systemctl restart cockpit.service
+[root@bastion-LAB-GUID ~]# systemctl restart cockpit.service
 ~~~
 
   **Note**: Restarting the web console will log you out, you need to relogin
@@ -120,14 +121,14 @@ On the terminal run:
 
 * Get the GUID of the image
 ~~~
-[root@bastion-GUID ~]# composer-cli compose list
+[root@bastion-LAB-GUID ~]# composer-cli compose list
 ~~~
 
 * Login to the GUI of the server
 
 * Test the image with virt-viewer
 ~~~
-[root@bastion-GUID ~]# virt-install --name RHEL8Lab2 --memory 2048 --vcpus 2 --os-variant rhel8.0 --import --disk /var/lib/lorax/composer/results/<GUID number for that image>/disk.qcow2
+[root@bastion-LAB-GUID ~]# virt-install --name RHEL8Lab2 --memory 2048 --vcpus 2 --os-variant rhel8.0 --import --disk /var/lib/lorax/composer/results/<GUID number for that image>/disk.qcow2
 ~~~
 
 <br>
@@ -140,7 +141,7 @@ On the terminal run:
 * Download a copy of the blueprint configuration file from Image Builder
 
 ~~~
-[root@bastion-GUID ~]# composer-cli blueprints save summit2019
+[root@bastion-LAB-GUID ~]# composer-cli blueprints save summit2019
 ~~~
 * You will get a file **summit2019.toml**
 
@@ -154,12 +155,12 @@ groups = ["users", "wheel"]
 
 * Push the revised blueprint configuration file back to Image Builder
 ~~~
-[root@bastion-GUID ~]# composer-cli blueprints push summit2019.toml
+[root@bastion-LAB-GUID ~]# composer-cli blueprints push summit2019.toml
 ~~~
 
 * Verify that your changes appear in the configuration file
 ~~~
-[root@bastion-GUID ~]# composer-cli blueprints show summit2019
+[root@bastion-LAB-GUID ~]# composer-cli blueprints show summit2019
 ~~~
 
 
@@ -169,19 +170,19 @@ groups = ["users", "wheel"]
 
 * Get GUID of the image
 ~~~
-[root@bastion-GUID ~]# composer-cli compose list
+[root@bastion-LAB-GUID ~]# composer-cli compose list
 ~~~
 
 * Run this command to test the image with *virt-viewer*
 
 ~~~
-[root@bastion-GUID ~]# virt-install --name RHEL8Lab2 --memory 2048 --vcpus 2 --os-variant rhel8.0 --import --disk /var/lib/lorax/composer/results/<GUID number for that image>/disk.qcow2
+[root@bastion-LAB-GUID ~]# virt-install --name RHEL8Lab2 --memory 2048 --vcpus 2 --os-variant rhel8.0 --import --disk /var/lib/lorax/composer/results/<GUID number for that image>/disk.qcow2
 ~~~
 
 * Verify the VM
 
   * Login as myuser and password as mypassword
-  * Run **id** command to verify if myuser is a member of groups users and wheel by command
+  * Run **id** command to verify if myuser is a member of *users* and *wheel* group
   * Verify that the package you added in the blueprint earlier are installed in the VM
   ~~~
   [root@vm ~]# rpm -qa | grep -i <package-name>
