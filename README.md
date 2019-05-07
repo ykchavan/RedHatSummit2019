@@ -146,7 +146,7 @@ In our case, it is 99ed96cd-b783-4cad-838f-c8173e038431. Yours will be different
 <h3>Congratulations! You built your first image.</h3>
 
 Try to log in as "myuser" with password "mypassword". Try to login as root.
-We are done with Lab 1 here. We will *wait* for instructor to start Lab 2.
+We are done with Lab 1 here. *Wait* for instructor to start Lab 2.
 
 <br>
 <hr>
