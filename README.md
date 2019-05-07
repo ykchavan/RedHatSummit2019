@@ -117,13 +117,13 @@ Here  LAB-GUID  is the number provided to you on the 'Lab information' page
 
 **Note** Creation of a new Image may take 5 to 10 minutes
 
-* Meanwhile you can monitor logs at /var/log/lorex-composer
+* Meanwhile you can monitor logs at /var/log/lorax-composer.  Once completed, you can download image file to your local machine by clicking 'download' button.
 
 <a name="testimage"></a>
 
 # Lab 1.5 - Test the new image
 
-* On the Lab GUID Assignment tab in your browser, at the bottom of the page there is a link to the console of your RHEL 8 server. When you click on that link, you will be presented with a SUMMIT-LAB control page. On it under "0bastion" click "CONSOLE". This will open a graphical console of your RHEL 8 server
+* On the Lab-GUID Assignment tab in your browser, at the bottom of the page there is a link to the console of your RHEL 8 server. When you click on that link, you will be presented with a SUMMIT-LAB control page. On it under "0bastion" click "CONSOLE". This will open a graphical console of your RHEL 8 server
 
 * Log in as lab-user and the provided password.
 
@@ -131,22 +131,22 @@ Here  LAB-GUID  is the number provided to you on the 'Lab information' page
 
 * Use "sudo -i" to become root.
 
-* Get the GUID of the image
+* We need location of the qcow2 file created to boot from it. To get that, we need to get the image-GUID of newly created image using command
 ~~~
 [root@bastion-LAB-GUID ~]# composer-cli compose list
 99ed96cd-b783-4cad-838f-c8173e038431 FINISHED summit2019 0.0.2 qcow2                                                                                                                                 
 ~~~
+In our case, it is 99ed96cd-b783-4cad-838f-c8173e038431. Yours will be different.
 
 * Test the image with virt-install. It will start virt-viewer where you can see your vm booting up
 ~~~
-[root@bastion-LAB-GUID ~]# virt-install --name RHEL8Lab1 --memory 2048 --vcpus 2 --os-variant rhel8.0 --import --disk /var/lib/lorax/composer/results/<GUID number for that image>/disk.qcow2
+[root@bastion-LAB-GUID ~]# virt-install --name RHEL8Lab1 --memory 2048 --vcpus 2 --os-variant rhel8.0 --import --disk /var/lib/lorax/composer/results/<image-GUID>/disk.qcow2
 ~~~
 
 <h3>Congratulations! You built your first image.</h3>
 
-Try to log in as "myuser" with password "mypassword".
-Sadly in a freshly built image this will not work. For security reasons root account is disabled and we have no other account we can use.
-So let us go ahead and fix that!
+Try to log in as "myuser" with password "mypassword". Try to login as root.
+We are done with Lab 1 here. We will *wait* for instructor to start Lab 2.
 
 <br>
 <hr>
@@ -191,14 +191,14 @@ groups = ["users", "wheel"]
 
 * Go back to your graphical console of your RHEL 8 server
 
-* Get GUID of the image
+* Get the image-GUID
 ~~~
 [root@bastion-LAB-GUID ~]# composer-cli compose list
 ~~~
 
 * Test the new image with *virt-install*
 ~~~
-[root@bastion-LAB-GUID ~]# virt-install --name RHEL8Lab2 --memory 2048 --vcpus 2 --os-variant rhel8.0 --import --disk /var/lib/lorax/composer/results/<GUID number for that image>/disk.qcow2
+[root@bastion-LAB-GUID ~]# virt-install --name RHEL8Lab2 --memory 2048 --vcpus 2 --os-variant rhel8.0 --import --disk /var/lib/lorax/composer/results/<image-GUID>/disk.qcow2
 ~~~
 
 * Verify the VM
