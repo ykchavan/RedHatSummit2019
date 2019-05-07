@@ -187,7 +187,7 @@ groups = ["users", "wheel"]
 
   <a name="testvirt"></a>
 
-# Lab 2.2 - Test the new image
+# Lab 2.2 - Test the new image wtih *virt-install*
 
 * Go back to your graphical console of your RHEL 8 server
 
@@ -196,7 +196,7 @@ groups = ["users", "wheel"]
 [root@bastion-LAB-GUID ~]# composer-cli compose list
 ~~~
 
-* Test the new image with *virt-install*
+* Test the new image with virt-install
 ~~~
 [root@bastion-LAB-GUID ~]# virt-install --name RHEL8Lab2 --memory 2048 --vcpus 2 --os-variant rhel8.0 --import --disk /var/lib/lorax/composer/results/<image-GUID>/disk.qcow2
 ~~~
@@ -210,8 +210,8 @@ groups = ["users", "wheel"]
   [myuser@localhost ~]$ rpm -qa | grep -i <package-name>
   ~~~
 
-<h3> Congratulations! you have fixed the problems by customizing the blueprint configuartion file. You have output image ready that has your selected packages installed. It has your configured user added.
-Similar way you can create images in other format and customize them. </h3>
+<h3> Congratulations! you have fixed the problems by customizing the blueprint configuartion file. You have output image ready that has your selected packages installed. It has your configured user added.</h3>
+<h3> Similar way you can create images in other format and customize them. </h3>
 
 
 <a name="resource"></a>
