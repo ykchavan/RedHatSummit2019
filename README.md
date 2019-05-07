@@ -35,7 +35,7 @@ Here  LAB-GUID  is the number provided to you on the 'Lab information' page
   * virt-install
 
 
-* Web console is enabled
+* Red Hat Web console is enabled. Verify it by running following command
   ~~~
   [root@bastion-LAB-GUID ~]# systemctl is-enabled cockpit.socket
   enabled
