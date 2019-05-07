@@ -13,7 +13,7 @@ Table of Contents:
 3. [ Lab 1.2 - Create a Blueprint ](#create)
 4. [ Lab 1.3 - Add packages to the Blueprint ](#add)
 5. [ Lab 1.4 - Create Image ](#createimage)
-6. [ Lab 1.5 - Test the new image ](#testimage)
+6. [ Lab 1.5 - Test the output image with virt-install ](#testimage)
 7. [ Lab 2.1 - Customize the blueprint configuration file ](#custom)
 8. [ Lab 2.2 - Test the new image with virt-install ](#testvirt)
 9. [ Resources ](#resource)
@@ -121,7 +121,7 @@ Here  LAB-GUID  is the number provided to you on the 'Lab information' page
 
 <a name="testimage"></a>
 
-# Lab 1.5 - Test the new image
+# Lab 1.5 - Test the output image with *virt-install*
 
 * On the Lab-GUID Assignment tab in your browser, at the bottom of the page there is a link to the console of your RHEL 8 server. When you click on that link, you will be presented with a SUMMIT-LAB control page. On it under "0bastion" click "CONSOLE". This will open a graphical console of your RHEL 8 server
 
@@ -210,8 +210,9 @@ groups = ["users", "wheel"]
   [myuser@localhost ~]$ rpm -qa | grep -i <package-name>
   ~~~
 
-<h3>Congratulations! you have fixed the problems by customizing the image</h3>
-*
+<h3> Congratulations! you have fixed the problems by customizing the blueprint configuartion file. You have output image ready that has your selected packages installed. It has your configured user added.
+Similar way you can create images in other format and customize them. </h3>
+
 
 <a name="resource"></a>
 # Resources
