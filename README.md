@@ -219,6 +219,6 @@ groups = ["users", "wheel"]
 
 [Building custom system images with composer - RHEL 7](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/chap-composer-x86)
 
-[Building custom system images with Composer - RHEL 8 Beta](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8-beta/html/installing_and_deploying_rhel/building-custom-system-images-with-composer_graphical-installation)
+[Composing a customized RHEL system image](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/composing_a_customized_rhel_system_image/index)
 
 [Download the Presentation](ImageBuilder-Summit.pdf)
